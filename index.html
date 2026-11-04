@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Antenna — простое приложение для защищённого соединения на базе AmneziaWG.">
+  <meta name="theme-color" content="#111715">
+  <title>Antenna — пространство для связи</title>
+  <style>
+    :root{color-scheme:light;--ink:#18211d;--muted:#596760;--paper:#f4f6ef;--acid:#d4fa75;--line:#d9e0d4;--dark:#111715}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit}a:focus-visible{outline:3px solid #80a433;outline-offset:4px}
+    .wrap{width:min(1160px,calc(100% - 48px));margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0;gap:16px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:-.06em;text-decoration:none}.mark{width:34px;height:34px;display:grid;place-items:center;background:var(--dark);color:var(--acid);border-radius:10px;font-size:19px}.navlink{font-size:14px;font-weight:650;text-decoration:none}
+    .hero{position:relative;overflow:hidden;min-height:520px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:30px;background:var(--dark);color:#f7faf4;border-radius:28px;padding:clamp(30px,6vw,76px)}.eyebrow{font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:750;color:#b9d0be}.hero h1{font-size:clamp(45px,6.8vw,82px);line-height:.99;letter-spacing:-.075em;max-width:650px;margin:22px 0}.hero h1 span{color:var(--acid)}.hero p{max-width:500px;color:#c1cdc4;font-size:18px;line-height:1.65;margin:0 0 28px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 20px;background:var(--acid);color:#172116;border-radius:12px;text-decoration:none;font-weight:750}.note{font-size:13px;color:#a1b0a5;margin-top:14px}
+    .visual{position:relative;min-height:360px;display:grid;place-items:center}.orbit{width:min(100%,360px);aspect-ratio:1;border:1px solid #34413a;border-radius:50%;display:grid;place-items:center;position:relative}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #34413a;border-radius:50%}.orbit:before{inset:12%}.orbit:after{inset:26%}.orb{position:relative;z-index:1;width:122px;height:122px;border:1px solid #a4c762;border-radius:38px;background:#d4fa75;display:grid;place-items:center;box-shadow:0 0 80px #d4fa7524}.orb svg{width:68px;height:68px}.dot{position:absolute;width:10px;height:10px;background:var(--acid);border-radius:50%;top:14%;right:20%;box-shadow:0 0 24px #d4fa75}
+    .intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;padding:86px 0 58px}.kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#67766a;font-weight:800}.intro h2,.final h2{font-size:clamp(32px,4vw,52px);line-height:1.08;letter-spacing:-.055em;margin:0}.intro p{font-size:19px;line-height:1.65;margin:0;color:#526158;max-width:650px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding-bottom:84px}.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px;min-height:190px}.number{color:#77877b;font-size:13px;font-weight:700}.step h3{font-size:20px;letter-spacing:-.035em;margin:28px 0 8px}.step p{font-size:15px;color:var(--muted);margin:0}.final{background:#e7eddf;border-radius:24px;padding:clamp(28px,5vw,58px);display:flex;align-items:end;justify-content:space-between;gap:24px}.final p{max-width:520px;color:var(--muted);margin:12px 0 0}.tag{flex:none;padding:11px 15px;background:white;border:1px solid #d5e0cf;border-radius:12px;color:#415345;font-size:13px;font-weight:700}
+    footer{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:36px 0 40px;font-size:13px;color:#637168}footer a{text-decoration:none}@media(max-width:720px){.wrap{width:min(100% - 28px,1160px)}.nav{padding:17px 0}.hero{grid-template-columns:1fr;padding:34px 26px 28px;gap:0;border-radius:22px}.hero h1{font-size:clamp(43px,12vw,67px)}.hero p{font-size:16px}.visual{min-height:250px}.orbit{width:230px}.orb{width:90px;height:90px;border-radius:28px}.orb svg{width:52px;height:52px}.intro{grid-template-columns:1fr;gap:16px;padding:62px 0 34px}.intro p{font-size:17px}.steps{grid-template-columns:1fr;padding-bottom:54px}.step{min-height:0;padding:22px}.step h3{margin:15px 0 7px}.final{align-items:start;flex-direction:column}footer{padding:28px 0 34px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav"><a class="brand" href="#top" aria-label="Antenna, в начало"><span class="mark" aria-hidden="true">А</span> ANTENNA</a><a class="navlink" href="#how">Как это работает</a></header>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div><div class="eyebrow">Android · AmneziaWG</div><h1 id="hero-title">Связь проще.<br><span>Пространства больше.</span></h1><p>Antenna помогает подключаться через защищённый туннель — без сложных настроек на главном экране.</p><a class="button" href="#how">Узнать больше&nbsp; ↗</a><div class="note">Новая сборка проходит проверку.</div></div>
+        <div class="visual" aria-hidden="true"><div class="orbit"><span class="dot"></span><div class="orb"><svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 42v22M30 64h20M31 37a13 13 0 0 1 18 0M23 29a24 24 0 0 1 34 0M15 21a35 35 0 0 1 50 0" stroke="#172116" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="42" r="4" fill="#172116"/></svg></div></div></div>
+      </section>
+      <section class="intro" id="how"><div><div class="kicker">Меньше лишнего</div><h2>Подключение в три шага.</h2></div><p>В основе — AmneziaWG. Поверх него Antenna добавляет простой интерфейс и управление доступом.</p></section>
+      <section class="steps" aria-label="Как начать"><article class="step"><span class="number">01 / УСТАНОВКА</span><h3>Установите приложение</h3><p>Откройте Antenna на Android-устройстве.</p></article><article class="step"><span class="number">02 / ДОСТУП</span><h3>Введите код</h3><p>Активируйте доступ полученным промокодом.</p></article><article class="step"><span class="number">03 / СОЕДИНЕНИЕ</span><h3>Подключитесь</h3><p>Разрешите VPN-подключение и нажмите основную кнопку.</p></article></section>
+      <section class="final"><div><div class="kicker">Свои настройки</div><h2>Ваш профиль тоже подойдёт.</h2><p>Если у вас уже есть совместимый конфигурационный файл, его можно импортировать отдельно.</p></div><div class="tag">Импорт .conf</div></section>
+    </main>
+    <footer><span>ANTENNA · Android</span><span>На базе AmneziaWG</span></footer>
+  </div>
+</body>
+</html>
